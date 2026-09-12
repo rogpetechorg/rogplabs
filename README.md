@@ -17,7 +17,13 @@ Os itens apresentados na página inicial ficam em `src/pages/index.astro`. O flu
 1. Criar ou atualizar o experimento com estado `avaliar`, `testar`, `adotar` ou `pausar`.
 2. Publicar o roteiro da semana e a próxima ação verificável.
 3. Converter pedidos recorrentes da comunidade em issues com o rótulo `pedido-da-comunidade`.
-4. Ligar o formulário da newsletter a um provedor antes de promovê-lo como inscrição ativa.
+4. Publicar o briefing apenas depois de revisar a lista de opt-in no Listmonk.
+
+## Newsletter
+
+O formulário envia inscrições para a lista pública de opt-in do Listmonk por meio de `/api/newsletter/subscribe`. O Nginx encaminha essa rota para `listmonk.rogpe.tech`, sem expor credenciais no navegador. O assinante recebe um e-mail de confirmação antes de entrar na lista.
+
+Para manter essa integração segura, não substitua o UUID da lista pública por uma lista privada e não envie inscrições pela API administrativa. O endpoint público precisa permanecer protegido pelo opt-in do Listmonk e por uma política de privacidade publicada antes do primeiro disparo.
 
 ## Deploy no Dokploy
 
@@ -29,4 +35,4 @@ git push origin main
 pnpm run deploy:production
 ```
 
-O comando usa `DOKPLOY_TOKEN` quando disponível ou a credencial `dokploy.rogpe.tech` do Chaves no macOS. O projeto é estático. O formulário atual coleta intenção no navegador e orienta o envio para o canal da comunidade. Para operar uma newsletter de verdade, configure um provedor (Buttondown, Resend ou ConvertKit) e substitua o destino no formulário. Nunca inclua uma chave de API no bundle.
+O comando usa `DOKPLOY_TOKEN` quando disponível ou a credencial `dokploy.rogpe.tech` do Chaves no macOS. O projeto é estático, com um proxy Nginx específico para a inscrição da newsletter. Nunca inclua uma chave de API no bundle.
