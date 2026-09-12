@@ -1,0 +1,28 @@
+name: Pedido de vídeo ou experimento
+description: Sugira um tema para o rogpLabs investigar, testar ou explicar.
+title: "[pedido] "
+labels: ["pedido-da-comunidade"]
+body:
+  - type: markdown
+    attributes:
+      value: "Obrigado por participar. Um pedido bom ajuda a transformar curiosidade em um experimento verificável."
+  - type: input
+    id: tema
+    attributes:
+      label: Tema ou pergunta
+      placeholder: "Como usar agentes de IA para..."
+    validations:
+      required: true
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto, ferramenta ou problema que você quer ver
+    validations:
+      required: true
+  - type: dropdown
+    id: formato
+    attributes:
+      label: Formato preferido
+      options: ["Vídeo no YouTube", "Experimento de laboratório", "Newsletter", "Live / conversa"]
+    validations:
+      required: true

@@ -1,0 +1,185 @@
+---
+import '../styles/global.css';
+
+const radar = [
+  { title: 'Agentes com memória verificável', ring: 'testar', quadrant: 'IA aplicada', x: 31, y: 30, note: 'Comparar recuperação, custo e controle humano antes de escalar.' },
+  { title: 'Interfaces que explicam IA', ring: 'avaliar', quadrant: 'Produto', x: 67, y: 19, note: 'Prototipar interfaces que mostram fonte, limite e próxima ação.' },
+  { title: 'MCP com princípio de menor acesso', ring: 'testar', quadrant: 'Infraestrutura', x: 75, y: 57, note: 'Testar conectores pequenos, auditáveis e com permissões explícitas.' },
+  { title: 'RAG genérico sem avaliação', ring: 'pausar', quadrant: 'IA aplicada', x: 22, y: 68, note: 'Pausado até ter um conjunto de avaliação que sustente a promessa.' },
+  { title: 'Coding com IA e gates reais', ring: 'adotar', quadrant: 'Prática', x: 54, y: 48, note: 'Usar com testes, revisão e escopo claro. Velocidade sem sinal não conta.' },
+  { title: 'Browser automation com supervisão', ring: 'avaliar', quadrant: 'Infraestrutura', x: 83, y: 76, note: 'Mapear riscos e casos seguros antes de levar a tarefas de produção.' },
+];
+
+const agenda = [
+  { date: '16 set', type: 'roteiro', title: 'O que muda quando a IA escreve junto com você', status: 'em pesquisa' },
+  { date: '19 set', type: 'laboratório', title: 'Um agente pequeno, uma ferramenta e uma regra de parada', status: 'gravando' },
+  { date: '23 set', type: 'ao vivo', title: 'Perguntas da comunidade: IA para quem programa e para quem lidera', status: 'aberto para perguntas' },
+];
+
+const courses = [
+  { number: '01', title: 'Inteligência Artificial para devs', copy: 'Modelos, agentes, ferramentas e avaliação no ritmo de quem entrega software.', state: 'em breve' },
+  { number: '02', title: 'Inteligência Artificial para negócios', copy: 'Decisão, processos e limites para equipes que precisam sair do hype com clareza.', state: 'em breve' },
+  { number: '03', title: 'Programação com IA', copy: 'Um caminho prático para usar IA como parceira de raciocínio, código e revisão.', state: 'em breve' },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="rogpLabs é um laboratório público para testar tecnologias, criar vídeos e aprender IA com a comunidade." />
+    <meta name="theme-color" content="#111216" />
+    <link rel="canonical" href="https://rogplabs.rogpe.tech/" />
+    <meta property="og:site_name" content="rogpLabs" />
+    <meta property="og:title" content="rogpLabs | Tecnologia em público" />
+    <meta property="og:description" content="Experimentos, vídeos, cursos e um radar vivo para quem constrói com tecnologia." />
+    <meta property="og:type" content="website" />
+    <title>rogpLabs | Tecnologia em público</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="site-shell">
+      <header class="site-header">
+        <div class="container header-inner">
+          <a class="brand" href="/" aria-label="rogpLabs, início"><span class="brand-wordmark">rogp<span>Labs</span></span><span class="brand-rule"></span><span class="brand-kicker">tecnologia<br />em público</span></a>
+          <nav aria-label="Principal">
+            <ul class="site-nav">
+              <li><a href="#radar">Radar</a></li>
+              <li><a href="#programacao">Programação</a></li>
+              <li><a href="#cursos">Cursos</a></li>
+              <li><a href="#comunidade">Comunidade</a></li>
+            </ul>
+          </nav>
+          <a class="header-cta" href="#newsletter">Entrar na lista <span aria-hidden="true">↗</span></a>
+        </div>
+      </header>
+
+      <main id="conteudo">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="container hero-grid">
+            <div class="hero-copy-block">
+              <span class="eyebrow"><i aria-hidden="true"></i>laboratório aberto</span>
+              <h1 id="hero-title">Tecnologia que<br /><em>a gente testa junto.</em></h1>
+              <p class="hero-copy">O rogpLabs é onde ideias viram experimentos, vídeos e conversas honestas. Mostramos o que estamos fazendo, o que aprendemos e o que decidimos pausar.</p>
+              <div class="hero-actions">
+                <a class="button button-primary" href="#radar">Ver o que está no laboratório <span aria-hidden="true">↓</span></a>
+                <a class="button button-secondary" href="#pedidos">Pedir um vídeo</a>
+              </div>
+              <p class="hero-note">Sem promessas prontas. Cada item tem um estado, uma pergunta e uma próxima ação.</p>
+            </div>
+            <div class="hero-signal" aria-label="Painel de sinais ativos do laboratório">
+              <div class="signal-bar"><span>rogpLabs / sinal vivo</span><span><i></i> atualizado hoje</span></div>
+              <div class="signal-stage">
+                <span class="signal-orbit orbit-a"></span><span class="signal-orbit orbit-b"></span><span class="signal-orbit orbit-c"></span>
+                <span class="signal-dot dot-one"><b>01</b><small>agentes</small></span>
+                <span class="signal-dot dot-two"><b>02</b><small>produto</small></span>
+                <span class="signal-dot dot-three"><b>03</b><small>comunidade</small></span>
+                <span class="signal-dot dot-core"><b>LAB</b><small>em curso</small></span>
+              </div>
+              <div class="signal-footer"><span>6 frentes abertas</span><span>ver registro <b>↗</b></span></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="pulse-strip" aria-label="Estado atual do laboratório">
+          <div class="container pulse-grid">
+            <div><b>06</b><span>experimentos<br />visíveis</span></div>
+            <div><b>03</b><span>próximos<br />encontros</span></div>
+            <div><b>01</b><span>ideia em<br />validação aberta</span></div>
+            <a href="#newsletter">Receba o registro semanal <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+
+        <section class="section manifesto" aria-labelledby="manifesto-title">
+          <div class="container manifesto-grid">
+            <div>
+              <span class="eyebrow">o jeito rogpLabs</span>
+              <h2 id="manifesto-title">Testar é mais útil<br />quando deixa rastro.</h2>
+            </div>
+            <div class="manifesto-copy">
+              <p>Não queremos montar uma vitrine de novidades. Queremos abrir o processo: hipótese, experimento, evidência e decisão.</p>
+              <p>Você acompanha vídeos, roteiros e atualizações. Também pode trazer uma pergunta boa, contestar um caminho ou ajudar a descobrir o próximo teste.</p>
+              <a class="text-link" href="#comunidade">Entender como participar <span aria-hidden="true">↘</span></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="radar-section" id="radar" aria-labelledby="radar-title">
+          <div class="container">
+            <div class="section-heading section-heading-inverse">
+              <div><span class="eyebrow">radar do laboratório</span><h2 id="radar-title">Uma posição é uma decisão,<br />não um selo de moda.</h2></div>
+              <p>Inspirado na leitura por anéis do Technology Radar da Thoughtworks. Aqui cada bolinha expõe o estágio do experimento e o motivo de estar lá.</p>
+            </div>
+            <div class="radar-controls" aria-label="Filtrar itens do radar">
+              <button class="is-active" type="button" data-radar-filter="todos">Todos <span>6</span></button>
+              <button type="button" data-radar-filter="adotar">Adotar <span>1</span></button>
+              <button type="button" data-radar-filter="testar">Testar <span>2</span></button>
+              <button type="button" data-radar-filter="avaliar">Avaliar <span>2</span></button>
+              <button type="button" data-radar-filter="pausar">Pausar <span>1</span></button>
+            </div>
+            <div class="radar-layout">
+              <div class="radar-map" aria-label="Mapa com seis sinais posicionados por estágio de adoção">
+                <div class="radar-ring ring-outer"></div><div class="radar-ring ring-middle"></div><div class="radar-ring ring-inner"></div>
+                <span class="ring-label label-adopt">ADOTAR</span><span class="ring-label label-trial">TESTAR</span><span class="ring-label label-assess">AVALIAR</span><span class="ring-label label-hold">PAUSAR</span>
+                {radar.map((item, index) => <button class={`radar-blip ${item.ring}`} type="button" style={`--x:${item.x}%;--y:${item.y}%`} data-ring={item.ring} data-radar-title={item.title} data-radar-note={item.note} data-radar-state={item.ring} aria-label={`${item.title}. Estado: ${item.ring}.`}><span>{String(index + 1).padStart(2, '0')}</span></button>)}
+              </div>
+              <aside class="radar-detail" aria-live="polite">
+                <span class="eyebrow"><i></i><span data-radar-state>testar</span></span>
+                <h3 data-radar-title>Agentes com memória verificável</h3>
+                <p data-radar-note>Comparar recuperação, custo e controle humano antes de escalar.</p>
+                <div class="radar-meta"><span>estado aberto</span><span>atualizado 12 set</span></div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section class="section work-section" id="programacao" aria-labelledby="work-title">
+          <div class="container">
+            <div class="section-heading"><div><span class="eyebrow">o que está acontecendo</span><h2 id="work-title">Últimos registros.<br />Próximos testes.</h2></div><p>O laboratório mistura prática, vídeo e conversa. O calendário não é enfeite: cada encontro aceita uma participação diferente.</p></div>
+            <div class="agenda-grid">
+              <article class="last-log"><div class="log-mark">registro<br />mais recente</div><span class="eyebrow">experimento 017</span><h3>Quando um agente precisa saber a hora de parar</h3><p>Testamos um fluxo com limite explícito de contexto, permissão e tentativas. O próximo passo é comparar esse modelo com uma automação sem regra de parada.</p><a class="text-link" href="#newsletter">Ler no próximo briefing <span aria-hidden="true">↗</span></a></article>
+              <div class="agenda-list">
+                {agenda.map((item) => <article class="agenda-item"><time>{item.date}</time><div><span>{item.type}</span><h3>{item.title}</h3></div><p>{item.status}</p></article>)}
+                <a class="agenda-open" href="#pedidos">Tem uma pauta melhor? Coloque na fila <span aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="youtube-section" aria-labelledby="youtube-title">
+          <div class="container youtube-grid">
+            <div><span class="eyebrow">youtube é parte do laboratório</span><h2 id="youtube-title">Cada vídeo continua<br />depois do play.</h2><p>O YouTube é onde mostramos o experimento. O site organiza o roteiro, as referências e o que a comunidade levou para o próximo episódio.</p><a class="button button-inverse" href="https://www.youtube.com/@rodopeixoto" target="_blank" rel="noreferrer">Abrir o canal <span aria-hidden="true">↗</span></a></div>
+            <div class="episode-stack" aria-label="Estrutura de um episódio rogpLabs"><div class="episode-card episode-main"><span>EP. 018</span><strong>IA não substitui<br />critério técnico.</strong><small>roteiro em construção</small></div><div class="episode-card episode-note"><span>DEPOIS DO VÍDEO</span><strong>referências<br />+ teste + debate</strong></div><div class="episode-card episode-discussion"><i></i><span>perguntas viram<br />próximo roteiro</span></div></div>
+          </div>
+        </section>
+
+        <section class="section courses-section" id="cursos" aria-labelledby="courses-title">
+          <div class="container"><div class="section-heading"><div><span class="eyebrow">aprender fazendo</span><h2 id="courses-title">Cursos em desenvolvimento.</h2></div><p>Antes de abrir matrícula, cada curso ganha uma sequência de vídeos, exercícios e perguntas reais da comunidade.</p></div><div class="courses-grid">{courses.map((course) => <article><span>{course.number}</span><div><h3>{course.title}</h3><p>{course.copy}</p></div><small>{course.state}</small></article>)}</div></div>
+        </section>
+
+        <section class="community-section" id="comunidade" aria-labelledby="community-title">
+          <div class="container community-grid"><div><span class="eyebrow">comunidade</span><h2 id="community-title">Não é plateia.<br />É parte do teste.</h2><p>A comunidade tem três portas simples: acompanhar, discutir e propor. Assim a conversa não se perde e as ideias boas conseguem virar algo concreto.</p></div><div class="community-path"><article><span>01</span><h3>Acompanhar</h3><p>Assine o briefing e veja o que mudou no laboratório, sem depender do algoritmo.</p><a href="#newsletter">Receber o briefing</a></article><article><span>02</span><h3>Discutir</h3><p>Leve contrapontos e dúvidas para as Discussões do GitHub quando o espaço for aberto.</p><a href="https://github.com/rogpetechorg/rogplabs/discussions" target="_blank" rel="noreferrer">Ir para as discussões</a></article><article><span>03</span><h3>Propor</h3><p>Transforme uma curiosidade em pedido de vídeo, experimento ou conversa ao vivo.</p><a href="#pedidos">Colocar na fila</a></article></div></div>
+        </section>
+
+        <section class="request-section" id="pedidos" aria-labelledby="request-title"><div class="container request-grid"><div><span class="eyebrow">fila pública</span><h2 id="request-title">O que você quer<br />ver a gente investigar?</h2><p>Escreva a pergunta, escolha um formato e abra o pedido. A fila fica no GitHub para que todo mundo consiga acompanhar, comentar e votar.</p></div><form class="request-form" data-request-form><label for="request-topic">Sua pergunta</label><input id="request-topic" name="topic" required minlength="8" placeholder="Ex.: como avaliar se um agente resolveu bem uma tarefa?" /><fieldset><legend>Formato que ajudaria mais</legend><div><label><input type="radio" name="format" value="Vídeo no YouTube" checked /> Vídeo</label><label><input type="radio" name="format" value="Experimento de laboratório" /> Experimento</label><label><input type="radio" name="format" value="Live ou conversa" /> Live</label></div></fieldset><button class="button button-primary" type="submit">Abrir pedido no GitHub <span aria-hidden="true">↗</span></button><p class="form-note">Você poderá revisar o texto antes de enviar no GitHub.</p></form></div></section>
+
+        <section class="newsletter-section" id="newsletter" aria-labelledby="newsletter-title"><div class="container newsletter-inner"><div><span class="eyebrow">briefing do laboratório</span><h2 id="newsletter-title">Uma vez por semana,<br />o que vale acompanhar.</h2><p>Experimentos, decisões, próximos roteiros e uma pergunta que ainda não fechamos. A lista será ativada antes da primeira edição.</p></div><form class="newsletter-form" data-newsletter-form><label for="email">Seu e-mail</label><div><input id="email" name="email" type="email" autocomplete="email" required placeholder="voce@exemplo.com" /><button class="button button-inverse" type="submit">Quero o briefing</button></div><p class="form-message" data-newsletter-message aria-live="polite"></p></form></div></section>
+      </main>
+      <footer class="site-footer"><div class="container footer-inner"><a class="brand" href="/"><span class="brand-wordmark">rogp<span>Labs</span></span></a><p>Laboratório aberto da ROGPE. Construído em público, com espaço para mudar de ideia.</p><div class="footer-links"><a href="https://github.com/rogpetechorg/rogplabs" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.youtube.com/@rodopeixoto" target="_blank" rel="noreferrer">YouTube</a><a href="mailto:labs@rogpe.tech">Contato</a></div></div></footer>
+    </div>
+
+    <script>
+      const filters = document.querySelectorAll<HTMLButtonElement>('[data-radar-filter]');
+      const blips = document.querySelectorAll<HTMLButtonElement>('[data-ring]');
+      const title = document.querySelector('[data-radar-title]');
+      const note = document.querySelector('[data-radar-note]');
+      const state = document.querySelector('[data-radar-state]');
+      function selectBlip(blip: HTMLButtonElement) { if (title) title.textContent = blip.dataset.radarTitle ?? ''; if (note) note.textContent = blip.dataset.radarNote ?? ''; if (state) state.textContent = blip.dataset.radarState ?? ''; blips.forEach((item) => item.classList.toggle('is-selected', item === blip)); }
+      blips.forEach((blip) => blip.addEventListener('click', () => selectBlip(blip)));
+      filters.forEach((filter) => filter.addEventListener('click', () => { const choice = filter.dataset.radarFilter; filters.forEach((item) => item.classList.toggle('is-active', item === filter)); blips.forEach((blip) => { const visible = choice === 'todos' || blip.dataset.ring === choice; blip.classList.toggle('is-muted', !visible); }); }));
+      document.querySelector<HTMLFormElement>('[data-request-form]')?.addEventListener('submit', (event) => { event.preventDefault(); const form = event.currentTarget as HTMLFormElement; const topic = form.querySelector<HTMLInputElement>('[name="topic"]')?.value.trim(); const format = form.querySelector<HTMLInputElement>('[name="format"]:checked')?.value; if (!topic) return; const body = `## Tema ou pergunta\n${topic}\n\n## Formato preferido\n${format}\n\n## Contexto\nQuero ver este assunto no rogpLabs.`; const url = `https://github.com/rogpetechorg/rogplabs/issues/new?template=video-request.yml&title=${encodeURIComponent(`[pedido] ${topic}`)}&body=${encodeURIComponent(body)}`; window.open(url, '_blank', 'noopener,noreferrer'); });
+      document.querySelector<HTMLFormElement>('[data-newsletter-form]')?.addEventListener('submit', (event) => { event.preventDefault(); const form = event.currentTarget as HTMLFormElement; const input = form.querySelector<HTMLInputElement>('input[type="email"]'); const message = document.querySelector('[data-newsletter-message]'); if (!input?.checkValidity()) { input?.reportValidity(); return; } if (message) message.textContent = 'A lista está sendo preparada. Guardamos este endereço apenas neste navegador até a abertura.'; localStorage.setItem('rogplabs-newsletter-interest', input.value); form.reset(); });
+    </script>
+  </body>
+</html>

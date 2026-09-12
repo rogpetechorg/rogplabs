@@ -1,0 +1,20 @@
+{
+  "name": "rogplabs-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": { "node": ">=22.0.0" },
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "check": "astro check",
+    "check:site": "node scripts/verify-site.mjs",
+    "check:all": "pnpm run check && pnpm run build && pnpm run check:site"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.13.2",
+    "typescript": "^5.9.2"
+  }
+}
