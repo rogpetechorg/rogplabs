@@ -10,7 +10,8 @@
     "build": "astro build",
     "check": "astro check",
     "check:site": "node scripts/verify-site.mjs",
-    "check:all": "pnpm run check && pnpm run build && pnpm run check:site"
+    "check:all": "pnpm run check && pnpm run build && pnpm run check:site",
+    "deploy:production": "node scripts/deploy-dokploy.mjs"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",

@@ -21,10 +21,12 @@ Os itens apresentados na página inicial ficam em `src/pages/index.astro`. O flu
 
 ## Deploy no Dokploy
 
-Crie uma aplicação Docker apontando para este repositório, com build type `Dockerfile`, porta interna `80` e domínio `rogplabs.rogpe.tech`. O health check é `/healthz`. O DNS do subdomínio precisa apontar para o servidor Dokploy antes da emissão do certificado.
+O Dokploy está configurado no ambiente de produção do ROGP Ecossistema v4, com Dockerfile, porta interna `80`, health check `/healthz` e domínio `rogplabs.rogpe.tech`. O projeto usa o repositório público como origem Git. Para publicar um commit já validado:
 
 ```bash
 pnpm run check:all
+git push origin main
+pnpm run deploy:production
 ```
 
-O projeto é estático. O formulário atual coleta intenção no navegador e orienta o envio para o canal da comunidade. Para operar uma newsletter de verdade, configure um provedor (Buttondown, Resend ou ConvertKit) e substitua o destino no formulário. Nunca inclua uma chave de API no bundle.
+O comando usa `DOKPLOY_TOKEN` quando disponível ou a credencial `dokploy.rogpe.tech` do Chaves no macOS. O projeto é estático. O formulário atual coleta intenção no navegador e orienta o envio para o canal da comunidade. Para operar uma newsletter de verdade, configure um provedor (Buttondown, Resend ou ConvertKit) e substitua o destino no formulário. Nunca inclua uma chave de API no bundle.
