@@ -70,14 +70,15 @@ const courses = [
             </div>
             <div class="hero-signal" aria-label="Painel de sinais ativos do laboratório">
               <div class="signal-bar"><span>rogpLabs / sinal vivo</span><span><i></i> atualizado hoje</span></div>
-              <div class="signal-stage">
+              <div class="signal-stage" aria-live="polite">
                 <span class="signal-orbit orbit-a"></span><span class="signal-orbit orbit-b"></span><span class="signal-orbit orbit-c"></span>
-                <span class="signal-dot dot-one"><b>01</b><small>agentes</small></span>
-                <span class="signal-dot dot-two"><b>02</b><small>produto</small></span>
-                <span class="signal-dot dot-three"><b>03</b><small>comunidade</small></span>
-                <span class="signal-dot dot-core"><b>LAB</b><small>em curso</small></span>
+                <button class="signal-dot dot-one is-active" type="button" aria-pressed="true" data-signal-title="Agentes com memória verificável" data-signal-copy="Em teste: comparar recuperação, custo e controle humano antes de escalar." data-signal-status="em teste"><b>01</b><small>agentes</small></button>
+                <button class="signal-dot dot-two" type="button" aria-pressed="false" data-signal-title="Interfaces que explicam IA" data-signal-copy="Em avaliação: a interface precisa mostrar fonte, limite e próxima ação." data-signal-status="em avaliação"><b>02</b><small>produto</small></button>
+                <button class="signal-dot dot-three" type="button" aria-pressed="false" data-signal-title="Roteiros que começam na comunidade" data-signal-copy="Aberto: perguntas viram pauta, experimento e conversa no YouTube." data-signal-status="aberto"><b>03</b><small>comunidade</small></button>
+                <button class="signal-dot dot-core" type="button" aria-pressed="false" data-signal-title="O laboratório está em curso" data-signal-copy="Clique em uma frente para ver o que está mudando agora." data-signal-status="sinal vivo"><b>LAB</b><small>em curso</small></button>
+                <div class="signal-readout"><strong data-signal-title>Agentes com memória verificável</strong><span data-signal-copy>Em teste: comparar recuperação, custo e controle humano antes de escalar.</span></div>
               </div>
-              <div class="signal-footer"><span>6 frentes abertas</span><span>ver registro <b>↗</b></span></div>
+              <div class="signal-footer"><span data-signal-status>em teste</span><a href="#radar">ver no radar <b>↗</b></a></div>
             </div>
           </div>
         </section>
@@ -170,6 +171,21 @@ const courses = [
     </div>
 
     <script>
+      const signalControls = document.querySelectorAll<HTMLButtonElement>('.signal-dot');
+      const signalTitle = document.querySelector<HTMLElement>('.signal-readout [data-signal-title]');
+      const signalCopy = document.querySelector<HTMLElement>('.signal-readout [data-signal-copy]');
+      const signalStatus = document.querySelector<HTMLElement>('.signal-footer [data-signal-status]');
+      const signalStage = document.querySelector<HTMLElement>('.signal-stage');
+      signalControls.forEach((control) => control.addEventListener('click', () => {
+        signalControls.forEach((item) => { const active = item === control; item.classList.toggle('is-active', active); item.setAttribute('aria-pressed', String(active)); });
+        if (signalTitle) signalTitle.textContent = control.dataset.signalTitle ?? '';
+        if (signalCopy) signalCopy.textContent = control.dataset.signalCopy ?? '';
+        if (signalStatus) signalStatus.textContent = control.dataset.signalStatus ?? '';
+        signalStage?.classList.remove('is-updating');
+        void signalStage?.offsetWidth;
+        signalStage?.classList.add('is-updating');
+      }));
+
       const filters = document.querySelectorAll<HTMLButtonElement>('[data-radar-filter]');
       const blips = document.querySelectorAll<HTMLButtonElement>('[data-ring]');
       const title = document.querySelector('[data-radar-title]');
@@ -177,7 +193,7 @@ const courses = [
       const state = document.querySelector('[data-radar-state]');
       function selectBlip(blip: HTMLButtonElement) { if (title) title.textContent = blip.dataset.radarTitle ?? ''; if (note) note.textContent = blip.dataset.radarNote ?? ''; if (state) state.textContent = blip.dataset.radarState ?? ''; blips.forEach((item) => item.classList.toggle('is-selected', item === blip)); }
       blips.forEach((blip) => blip.addEventListener('click', () => selectBlip(blip)));
-      filters.forEach((filter) => filter.addEventListener('click', () => { const choice = filter.dataset.radarFilter; filters.forEach((item) => item.classList.toggle('is-active', item === filter)); blips.forEach((blip) => { const visible = choice === 'todos' || blip.dataset.ring === choice; blip.classList.toggle('is-muted', !visible); }); }));
+      filters.forEach((filter) => filter.addEventListener('click', () => { const choice = filter.dataset.radarFilter; filters.forEach((item) => item.classList.toggle('is-active', item === filter)); blips.forEach((blip) => { const visible = choice === 'todos' || blip.dataset.ring === choice; blip.classList.toggle('is-muted', !visible); }); const firstVisible = [...blips].find((blip) => choice === 'todos' || blip.dataset.ring === choice); if (firstVisible) selectBlip(firstVisible); }));
       document.querySelector<HTMLFormElement>('[data-request-form]')?.addEventListener('submit', (event) => { event.preventDefault(); const form = event.currentTarget as HTMLFormElement; const topic = form.querySelector<HTMLInputElement>('[name="topic"]')?.value.trim(); const format = form.querySelector<HTMLInputElement>('[name="format"]:checked')?.value; if (!topic || !format) return; const params = new URLSearchParams({ template: 'video-request.yml', title: `[pedido] ${topic}`, tema: topic, formato: format, contexto: 'Proposta enviada pelo rogpLabs. Adicione aqui o contexto, ferramenta ou problema que motivou este pedido.' }); window.open(`https://github.com/rogpetechorg/rogplabs/issues/new?${params.toString()}`, '_blank', 'noopener,noreferrer'); });
       document.querySelector<HTMLFormElement>('[data-newsletter-form]')?.addEventListener('submit', async (event) => { event.preventDefault(); const form = event.currentTarget as HTMLFormElement; const input = form.querySelector<HTMLInputElement>('input[type="email"]'); const button = form.querySelector<HTMLButtonElement>('button[type="submit"]'); const message = document.querySelector<HTMLElement>('[data-newsletter-message]'); if (!input?.checkValidity()) { input?.reportValidity(); return; } if (button) button.disabled = true; if (message) message.textContent = 'Enviando sua inscrição…'; try { const response = await fetch('/api/newsletter/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: input.value, list_uuids: ['00329d73-0df1-435b-ab44-ee105ec9b6a7'] }) }); if (!response.ok) throw new Error('subscription_failed'); if (message) message.textContent = 'Confira seu e-mail para confirmar a inscrição.'; form.reset(); } catch { if (message) message.textContent = 'Não foi possível concluir agora. Tente novamente em alguns minutos.'; } finally { if (button) button.disabled = false; } });
     </script>
