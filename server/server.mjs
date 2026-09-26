@@ -23,11 +23,12 @@ export async function createApp({ root = resolve('dist'), dataDir = process.env.
   const limits = new Map(), working = new Set();
   const publicOrigin = config.PUBLIC_ORIGIN || 'https://rogplabs.rogpe.tech';
   const newsletterList = '00329d73-0df1-435b-ab44-ee105ec9b6a7';
+  const newsletterBase = (config.NEWSLETTER_BASE_URL || 'https://listmonk.rogpe.tech').replace(/\/$/, '');
   let newsletterAvailable = false, newsletterCheckedAt = 0;
   async function newsletterReady() {
     if (Date.now() - newsletterCheckedAt < 60000) return newsletterAvailable;
     try {
-      const response = await request('https://listmonk.rogpe.tech/subscription/form', { signal: AbortSignal.timeout(5000) });
+      const response = await request(`${newsletterBase}/subscription/form`, { signal: AbortSignal.timeout(5000) });
       newsletterAvailable = response.ok && (await response.text()).includes(`value="${newsletterList}"`);
     } catch { newsletterAvailable = false; }
     newsletterCheckedAt = Date.now();
@@ -69,7 +70,7 @@ export async function createApp({ root = resolve('dist'), dataDir = process.env.
         if (url.pathname === '/api/newsletter/subscribe') {
           if (!input || typeof input.email !== 'string' || input.email.length > 180 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email)) return json(res, 422, { error: 'invalid_email' });
           if (!await newsletterReady()) return json(res, 503, { error: 'newsletter_unavailable' });
-          const response = await request('https://listmonk.rogpe.tech/api/public/subscription', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: input.email.trim(), list_uuids: ['00329d73-0df1-435b-ab44-ee105ec9b6a7'] }), signal: AbortSignal.timeout(15000) });
+          const response = await request(`${newsletterBase}/api/public/subscription`, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: input.email.trim(), list_uuids: [newsletterList] }), signal: AbortSignal.timeout(15000) });
           return json(res, response.ok ? 202 : 502, response.ok ? { status: 'confirmation_required' } : { error: 'newsletter_unavailable' });
         }
         const kind = isEvent ? 'events' : 'leads';
@@ -106,6 +107,6 @@ export async function createApp({ root = resolve('dist'), dataDir = process.env.
   return { server, storage, retry };
 }
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const app = await createApp(); app.server.listen(Number(process.env.PORT || 8080), '0.0.0.0');
+  const app = await createApp(); app.server.listen(Number(process.env.PORT || 8080), '0.0.0.0', () => { void app.retry().catch(() => {}); });
   process.on('SIGTERM', () => app.server.close(() => process.exit(0)));
 }
