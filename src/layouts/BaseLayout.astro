@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  noindex?: boolean;
+  publishedAt?: Date;
+  updatedAt?: Date;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  image = '/rogplabs-social-card.png',
+  type = 'website',
+  noindex = false,
+  publishedAt,
+  updatedAt,
+} = Astro.props;
+const canonical = new URL(canonicalPath, Astro.site ?? Astro.url.origin);
+const socialImage = new URL(image, Astro.site ?? Astro.url.origin);
+const fullTitle = title === 'rogpLabs' ? title : `${title} | rogpLabs`;
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://rogplabs.rogpe.tech/#organization',
+  name: 'rogpLabs',
+  url: 'https://rogplabs.rogpe.tech',
+  parentOrganization: { '@type': 'Organization', name: 'ROGPE', url: 'https://rogpe.tech' },
+  sameAs: ['https://github.com/rogpetechorg', 'https://www.youtube.com/@rodolfog.peixoto'],
+};
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#17181b" />
+    <meta name="color-scheme" content="light" />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:site_name" content="rogpLabs" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="rogpLabs: tecnologia que a gente testa junto." />
+    {publishedAt && <meta property="article:published_time" content={publishedAt.toISOString()} />}
+    {updatedAt && <meta property="article:modified_time" content={updatedAt.toISOString()} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <title>{fullTitle}</title>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(organization)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': type === 'article' ? 'Article' : 'WebPage', headline: title, description, url: canonical.toString(), inLanguage: 'pt-BR', publisher: { '@id': 'https://rogplabs.rogpe.tech/#organization' }, ...(publishedAt ? { datePublished: publishedAt.toISOString() } : {}), ...(updatedAt ? { dateModified: updatedAt.toISOString() } : {}) }).replace(/</g, '\\u003c')} />
+    <script is:inline type="module" src="/analytics.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <SiteHeader pathname={Astro.url.pathname} />
+    <main id="conteudo">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

@@ -1,0 +1,33 @@
+---
+interface Props { pathname: string }
+const { pathname } = Astro.props;
+const links = [
+  { href: '/radar/', label: 'Radar', active: pathname.startsWith('/radar') },
+  { href: '/registro/', label: 'Registro', active: pathname.startsWith('/registro') },
+  { href: '/projetos/', label: 'Projetos', active: pathname.startsWith('/projetos') },
+  { href: '/#participar', label: 'Participar', active: false },
+];
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="rogpLabs, início">
+      <span class="brand-wordmark">rogp<span>Labs</span></span>
+      <span class="brand-rule" aria-hidden="true"></span>
+      <span class="brand-kicker">tecnologia<br />em público</span>
+    </a>
+    <nav aria-label="Principal" class="desktop-nav">
+      <ul class="site-nav">
+        {links.map((link) => <li><a href={link.href} aria-current={link.active ? 'page' : undefined}>{link.label}</a></li>)}
+      </ul>
+    </nav>
+    <a class="header-cta" href="/#newsletter">Receber o briefing</a>
+    <details class="mobile-menu">
+      <summary aria-label="Abrir menu"><span></span><span></span><span></span></summary>
+      <nav aria-label="Menu móvel">
+        {links.map((link) => <a href={link.href} aria-current={link.active ? 'page' : undefined}>{link.label}</a>)}
+        <a href="/#newsletter">Receber o briefing</a>
+      </nav>
+    </details>
+  </div>
+</header>

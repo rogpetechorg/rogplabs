@@ -1,0 +1,3 @@
+Contact: mailto:labs@rogpe.tech
+Preferred-Languages: pt-BR, en
+Canonical: https://rogplabs.rogpe.tech/.well-known/security.txt

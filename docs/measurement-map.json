@@ -1,0 +1,2192 @@
+{
+  "/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Tecnologia quea gente testa junto."
+      },
+      {
+        "section": "s2",
+        "heading": "Cada posição precisa explicar o porquê."
+      },
+      {
+        "section": "s3",
+        "heading": "O que mudou e o que vem depois."
+      },
+      {
+        "section": "s4",
+        "heading": "Cada vídeo continua depois do play."
+      },
+      {
+        "section": "s5",
+        "heading": "O que vale investigar agora?"
+      },
+      {
+        "section": "s6",
+        "heading": "Cursos nascem dos testes, não de uma promessa vazia."
+      },
+      {
+        "section": "s7",
+        "heading": "Uma pergunta pode virar o próximo experimento."
+      },
+      {
+        "section": "s8",
+        "heading": "Uma vez por semana, o que vale acompanhar."
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "Explorar o radar →",
+        "href": "/radar/"
+      },
+      {
+        "target": "c13",
+        "label": "Propor uma investigação",
+        "href": "#participar"
+      },
+      {
+        "target": "c14",
+        "label": "Ler a decisão e as evidências ↗",
+        "href": "/radar/agentes-memoria-verificavel/"
+      },
+      {
+        "target": "c15",
+        "label": "01Adotar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c16",
+        "label": "02Testar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "02Acompanhar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c18",
+        "label": "01Evitar por enquanto",
+        "href": "/radar/"
+      },
+      {
+        "target": "c19",
+        "label": "Agentes com memória verificável",
+        "href": "/radar/agentes-memoria-verificavel/"
+      },
+      {
+        "target": "c20",
+        "label": "Ver decisão →",
+        "href": "/radar/agentes-memoria-verificavel/"
+      },
+      {
+        "target": "c21",
+        "label": "Interfaces que explicam IA",
+        "href": "/radar/interfaces-que-explicam-ia/"
+      },
+      {
+        "target": "c22",
+        "label": "Ver decisão →",
+        "href": "/radar/interfaces-que-explicam-ia/"
+      },
+      {
+        "target": "c23",
+        "label": "MCP com princípio de menor acesso",
+        "href": "/radar/mcp-menor-acesso/"
+      },
+      {
+        "target": "c24",
+        "label": "Ver decisão →",
+        "href": "/radar/mcp-menor-acesso/"
+      },
+      {
+        "target": "c25",
+        "label": "Ver todos os itens do radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c26",
+        "label": "Abrir o registro completo →",
+        "href": "/registro/"
+      },
+      {
+        "target": "c27",
+        "label": "Quando um agente precisa saber a hora de parar",
+        "href": "/registro/agentes-sabem-parar/"
+      },
+      {
+        "target": "c28",
+        "label": "↗",
+        "href": "/registro/agentes-sabem-parar/"
+      },
+      {
+        "target": "c29",
+        "label": "Interfaces explicáveis entram no radar",
+        "href": "/registro/interfaces-explicaveis-entram-no-radar/"
+      },
+      {
+        "target": "c30",
+        "label": "↗",
+        "href": "/registro/interfaces-explicaveis-entram-no-radar/"
+      },
+      {
+        "target": "c31",
+        "label": "Abrir o canal ↗",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c32",
+        "label": "01 / vídeo IA não substitui critério técnico EP. 018 ↗",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c33",
+        "label": "Entrar na conversa ↘",
+        "href": "#pedidos"
+      },
+      {
+        "target": "c34",
+        "label": "Prefere conversar primeiro? Use as Discussões ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c35",
+        "label": "Revisar pedido no GitHub ↗"
+      },
+      {
+        "target": "c36",
+        "label": "Ver projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c37",
+        "label": "Conversar com o rogpLabs",
+        "href": "/contato/"
+      },
+      {
+        "target": "c38",
+        "label": "Quero o briefing"
+      },
+      {
+        "target": "c39",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c40",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c41",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c42",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c43",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c44",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c45",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c46",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c47",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c48",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/radar/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Uma posição é uma decisão, não um selo de moda."
+      },
+      {
+        "section": "s2",
+        "heading": "Itens do radar"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "Todos 6"
+      },
+      {
+        "target": "c13",
+        "label": "Adotar 1"
+      },
+      {
+        "target": "c14",
+        "label": "Testar 2"
+      },
+      {
+        "target": "c15",
+        "label": "Acompanhar 2"
+      },
+      {
+        "target": "c16",
+        "label": "Evitar por enquanto 1"
+      },
+      {
+        "target": "c17",
+        "label": "Agentes com memória verificável",
+        "href": "/radar/agentes-memoria-verificavel/"
+      },
+      {
+        "target": "c18",
+        "label": "Ver decisão →",
+        "href": "/radar/agentes-memoria-verificavel/"
+      },
+      {
+        "target": "c19",
+        "label": "Interfaces que explicam IA",
+        "href": "/radar/interfaces-que-explicam-ia/"
+      },
+      {
+        "target": "c20",
+        "label": "Ver decisão →",
+        "href": "/radar/interfaces-que-explicam-ia/"
+      },
+      {
+        "target": "c21",
+        "label": "MCP com princípio de menor acesso",
+        "href": "/radar/mcp-menor-acesso/"
+      },
+      {
+        "target": "c22",
+        "label": "Ver decisão →",
+        "href": "/radar/mcp-menor-acesso/"
+      },
+      {
+        "target": "c23",
+        "label": "RAG genérico sem avaliação",
+        "href": "/radar/rag-sem-avaliacao/"
+      },
+      {
+        "target": "c24",
+        "label": "Ver decisão →",
+        "href": "/radar/rag-sem-avaliacao/"
+      },
+      {
+        "target": "c25",
+        "label": "Coding com IA e gates reais",
+        "href": "/radar/coding-com-gates/"
+      },
+      {
+        "target": "c26",
+        "label": "Ver decisão →",
+        "href": "/radar/coding-com-gates/"
+      },
+      {
+        "target": "c27",
+        "label": "Browser automation com supervisão",
+        "href": "/radar/browser-automation-supervisionada/"
+      },
+      {
+        "target": "c28",
+        "label": "Ver decisão →",
+        "href": "/radar/browser-automation-supervisionada/"
+      },
+      {
+        "target": "c29",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c30",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c31",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c32",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c33",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c34",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c35",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c36",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c37",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c38",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/registro/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "O rastro do que testamos."
+      },
+      {
+        "section": "s2",
+        "heading": "Entradas do registro"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "Quando um agente precisa saber a hora de parar",
+        "href": "/registro/agentes-sabem-parar/"
+      },
+      {
+        "target": "c13",
+        "label": "Ler registro →",
+        "href": "/registro/agentes-sabem-parar/"
+      },
+      {
+        "target": "c14",
+        "label": "Interfaces explicáveis entram no radar",
+        "href": "/registro/interfaces-explicaveis-entram-no-radar/"
+      },
+      {
+        "target": "c15",
+        "label": "Ler registro →",
+        "href": "/registro/interfaces-explicaveis-entram-no-radar/"
+      },
+      {
+        "target": "c16",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c17",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c18",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c19",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c20",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c21",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c22",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c23",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c24",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c25",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/projetos/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "O processo também é parte da entrega."
+      },
+      {
+        "section": "s2",
+        "heading": "Registros para examinar"
+      },
+      {
+        "section": "s3",
+        "heading": "Quer investigar uma pergunta com o laboratório?"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "Quando um agente precisa saber a hora de parar",
+        "href": "/registro/agentes-sabem-parar/"
+      },
+      {
+        "target": "c13",
+        "label": "Interfaces explicáveis entram no radar",
+        "href": "/registro/interfaces-explicaveis-entram-no-radar/"
+      },
+      {
+        "target": "c14",
+        "label": "Explorar critérios e evidências no radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c15",
+        "label": "Conversar com o rogpLabs",
+        "href": "/contato/"
+      },
+      {
+        "target": "c16",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c17",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c18",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c19",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c20",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c21",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c22",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c23",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c24",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c25",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/contato/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Uma boa conversa começa com uma pergunta concreta."
+      },
+      {
+        "section": "s2",
+        "heading": "Envie em privado."
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "participe das Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c13",
+        "label": "Política de privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c14",
+        "label": "Enviar contexto"
+      },
+      {
+        "target": "c15",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c16",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c18",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c19",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c20",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c21",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c22",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c23",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c24",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/privacidade/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Privacidade"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao início",
+        "href": "/"
+      },
+      {
+        "target": "c13",
+        "label": "labs@rogpe.tech",
+        "href": "mailto:labs@rogpe.tech"
+      },
+      {
+        "target": "c14",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c15",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c16",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c17",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c18",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c19",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c20",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c21",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c22",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c23",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/termos/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Termos de uso"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao início",
+        "href": "/"
+      },
+      {
+        "target": "c13",
+        "label": "Código de Conduta",
+        "href": "https://github.com/rogpetechorg/rogplabs/blob/main/CODE_OF_CONDUCT.md"
+      },
+      {
+        "target": "c14",
+        "label": "labs@rogpe.tech",
+        "href": "mailto:labs@rogpe.tech"
+      },
+      {
+        "target": "c15",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c16",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c18",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c19",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c20",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c21",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c22",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c23",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c24",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/radar/browser-automation-supervisionada/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Browser automation com supervisão"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c13",
+        "label": "Responder nas Discussões ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c14",
+        "label": "OWASP Top 10 for LLM Applications ↗",
+        "href": "https://genai.owasp.org/llm-top-10/"
+      },
+      {
+        "target": "c15",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c16",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c18",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c19",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c20",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c21",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c22",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c23",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c24",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/radar/agentes-memoria-verificavel/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Agentes com memória verificável"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c13",
+        "label": "Responder nas Discussões ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c14",
+        "label": "Registro 017 do laboratório ↗",
+        "href": "/registro/agentes-sabem-parar"
+      },
+      {
+        "target": "c15",
+        "label": "Documentação do OpenAI Agents SDK sobre sessões ↗",
+        "href": "https://openai.github.io/openai-agents-python/sessions/"
+      },
+      {
+        "target": "c16",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c17",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c18",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c19",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c20",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c21",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c22",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c23",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c24",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c25",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/radar/coding-com-gates/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Coding com IA e gates reais"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c13",
+        "label": "Responder nas Discussões ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c14",
+        "label": "Registro 017 do laboratório ↗",
+        "href": "/registro/agentes-sabem-parar"
+      },
+      {
+        "target": "c15",
+        "label": "Repositório público do rogpLabs ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs"
+      },
+      {
+        "target": "c16",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c17",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c18",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c19",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c20",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c21",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c22",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c23",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c24",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c25",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/radar/interfaces-que-explicam-ia/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Interfaces que explicam IA"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c13",
+        "label": "Responder nas Discussões ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c14",
+        "label": "NIST AI Risk Management Framework ↗",
+        "href": "https://www.nist.gov/itl/ai-risk-management-framework"
+      },
+      {
+        "target": "c15",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c16",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c18",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c19",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c20",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c21",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c22",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c23",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c24",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/radar/mcp-menor-acesso/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "MCP com princípio de menor acesso"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c13",
+        "label": "Responder nas Discussões ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c14",
+        "label": "Especificação do Model Context Protocol ↗",
+        "href": "https://modelcontextprotocol.io/specification/"
+      },
+      {
+        "target": "c15",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c16",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c18",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c19",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c20",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c21",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c22",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c23",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c24",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/radar/rag-sem-avaliacao/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "RAG genérico sem avaliação"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c13",
+        "label": "Responder nas Discussões ↗",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c14",
+        "label": "Guia de avaliação do OpenAI Cookbook ↗",
+        "href": "https://cookbook.openai.com/examples/evaluation/getting_started_with_openai_evals"
+      },
+      {
+        "target": "c15",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c16",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c18",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c19",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c20",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c21",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c22",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c23",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c24",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/registro/agentes-sabem-parar/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Quando um agente precisa saber a hora de parar"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c13",
+        "label": "agentes memoria verificavel →",
+        "href": "/radar/agentes-memoria-verificavel/"
+      },
+      {
+        "target": "c14",
+        "label": "coding com gates →",
+        "href": "/radar/coding-com-gates/"
+      },
+      {
+        "target": "c15",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c16",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c17",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c18",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c19",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c20",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c21",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c22",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c23",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c24",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  },
+  "/registro/interfaces-explicaveis-entram-no-radar/": {
+    "sections": [
+      {
+        "section": "s1",
+        "heading": "Interfaces explicáveis entram no radar"
+      }
+    ],
+    "targets": [
+      {
+        "target": "c1",
+        "label": "rogpLabs tecnologiaem público",
+        "href": "/"
+      },
+      {
+        "target": "c2",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c3",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c4",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c5",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c6",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c7",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c8",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c9",
+        "label": "Projetos",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c10",
+        "label": "Participar",
+        "href": "/#participar"
+      },
+      {
+        "target": "c11",
+        "label": "Receber o briefing",
+        "href": "/#newsletter"
+      },
+      {
+        "target": "c12",
+        "label": "← Voltar ao registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c13",
+        "label": "interfaces que explicam ia →",
+        "href": "/radar/interfaces-que-explicam-ia/"
+      },
+      {
+        "target": "c14",
+        "label": "rogpLabs",
+        "href": "/"
+      },
+      {
+        "target": "c15",
+        "label": "Radar",
+        "href": "/radar/"
+      },
+      {
+        "target": "c16",
+        "label": "Registro",
+        "href": "/registro/"
+      },
+      {
+        "target": "c17",
+        "label": "Projetos e evidências",
+        "href": "/projetos/"
+      },
+      {
+        "target": "c18",
+        "label": "Contato e parcerias",
+        "href": "/contato/"
+      },
+      {
+        "target": "c19",
+        "label": "Discussões",
+        "href": "https://github.com/rogpetechorg/rogplabs/discussions"
+      },
+      {
+        "target": "c20",
+        "label": "YouTube",
+        "href": "https://www.youtube.com/@rodolfog.peixoto"
+      },
+      {
+        "target": "c21",
+        "label": "Privacidade",
+        "href": "/privacidade/"
+      },
+      {
+        "target": "c22",
+        "label": "Termos",
+        "href": "/termos/"
+      },
+      {
+        "target": "c23",
+        "label": "Contato",
+        "href": "mailto:labs@rogpe.tech"
+      }
+    ]
+  }
+}

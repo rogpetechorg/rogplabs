@@ -1,0 +1,18 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate, toIsoDate } from '../../lib/content';
+const records: CollectionEntry<'registro'>[] = await getCollection('registro', ({ data }) => !data.draft);
+records.sort((a: CollectionEntry<'registro'>, b: CollectionEntry<'registro'>) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title="Registro" description="Notas datadas dos experimentos, decisões e roteiros do rogpLabs.">
+  <header class="page-hero section-pad"><div class="container narrow"><span class="eyebrow">registro do laboratório</span><h1>O rastro do que testamos.</h1><p>Cada entrada mostra o contexto, o que mudou e a próxima decisão. Sem reescrever o passado quando uma hipótese falha.</p></div></header>
+  <section class="record-page section-pad" aria-labelledby="record-list-title">
+    <div class="container">
+      <h2 id="record-list-title" class="sr-only">Entradas do registro</h2>
+      <ol class="record-index">
+        {records.map((record) => <li><time datetime={toIsoDate(record.data.publishedAt)}>{formatDate(record.data.publishedAt, 'short')}</time><div><span class="eyebrow">{record.data.kind}</span><h2><a href={`/registro/${record.id}/`}>{record.data.title}</a></h2><p>{record.data.summary}</p><a class="text-link" href={`/registro/${record.id}/`}>Ler registro <span aria-hidden="true">→</span></a></div></li>)}
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

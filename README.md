@@ -1,8 +1,10 @@
 # rogpLabs
 
-Laboratório público da ROGPE para experimentar tecnologias, registrar o que funcionou e construir uma comunidade que aprende em público.
+Laboratório público da ROGPE para testar tecnologias, registrar decisões e transformar perguntas da comunidade em novos experimentos.
 
 ## Rodar localmente
+
+Requer Node.js 22 ou superior e pnpm 11.
 
 ```bash
 corepack enable
@@ -10,24 +12,53 @@ pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-## Conteúdo vivo
+Validação completa:
 
-Os itens apresentados na página inicial ficam em `src/pages/index.astro`. O fluxo editorial recomendado é:
+```bash
+pnpm run check:all
+```
 
-1. Criar ou atualizar o experimento com estado `avaliar`, `testar`, `adotar` ou `pausar`.
-2. Publicar o roteiro da semana e a próxima ação verificável.
-3. Converter pedidos recorrentes da comunidade em issues com o rótulo `pedido-da-comunidade`.
-4. Publicar o briefing apenas depois de revisar a lista de opt-in no Listmonk.
+O comando verifica tipos e schemas, gera todas as páginas e confere rotas, links internos, SEO, sitemap e contratos das APIs. Execute também `pnpm test` para validar isolamento de marca, idempotência, assinatura e persistência.
+
+## Estrutura
+
+- `/`: experimento em destaque, resumo do radar, registros recentes e participação.
+- `/radar`: lista filtrável de decisões.
+- `/radar/[slug]`: critério, evidências, histórico e pergunta aberta.
+- `/registro`: atualizações datadas do laboratório.
+- `/registro/[slug]`: contexto, aprendizado e próxima decisão.
+- `/projetos` e `/contato`: portfólio público e solicitação privada.
+- `/llms.txt`: índice das páginas públicas para ferramentas de IA.
+- `/privacidade`, `/termos` e `404`: páginas operacionais.
+
+Componentes reutilizáveis ficam em `src/components`, o layout comum em `src/layouts` e os estilos globais em `src/styles`.
+
+## Publicar conteúdo
+
+O conteúdo usa as Content Collections do Astro e é validado no build:
+
+```text
+src/content/
+  radar/
+  registro/
+  videos/
+```
+
+Um item do radar precisa informar recomendação, data de revisão, resumo, critério, próximo passo, evidências, histórico e pergunta para a comunidade. Registros em rascunho usam `draft: true` e não aparecem no site nem no sitemap.
+
+## Comunidade
+
+Discussões abertas ficam no [GitHub Discussions](https://github.com/rogpetechorg/rogplabs/discussions). Pedidos concretos podem ser iniciados pelo formulário da home; o site abre uma issue preenchida para revisão, sem publicar em nome da pessoa.
 
 ## Newsletter
 
-O formulário envia inscrições para a lista pública de opt-in do Listmonk por meio de `/api/newsletter/subscribe`. O Nginx encaminha essa rota para `listmonk.rogpe.tech`, sem expor credenciais no navegador. O assinante recebe um e-mail de confirmação antes de entrar na lista.
+O formulário envia inscrições para a lista pública de opt-in do Listmonk por `/api/newsletter/subscribe`. O servidor Node encaminha apenas essa rota para `listmonk.rogpe.tech`, sem credencial no navegador. O assinante recebe um e-mail de confirmação antes de entrar na lista.
 
-Para manter essa integração segura, não substitua o UUID da lista pública por uma lista privada e não envie inscrições pela API administrativa. O endpoint público precisa permanecer protegido pelo opt-in do Listmonk e por uma política de privacidade publicada antes do primeiro disparo.
+Não troque o UUID da lista pública por uma lista privada e não use a API administrativa no bundle.
 
 ## Deploy no Dokploy
 
-O Dokploy está configurado no ambiente de produção do ROGP Ecossistema v4, com Dockerfile, porta interna `80`, health check `/healthz` e domínio `rogplabs.rogpe.tech`. O projeto usa o repositório público como origem Git. Para publicar um commit já validado:
+O container Node 22 serve o build Astro na porta 80, com usuário não-root, health check em `/healthz`, página 404 real, CRM e proxy restrito da newsletter. O volume `/app/data` é obrigatório: guarda solicitações e eventos antes da confirmação, com retentativa a cada minuto. A configuração anterior de Nginx está preservada em `docker/` apenas como referência de rollback. Para publicar um commit já revisado:
 
 ```bash
 pnpm run check:all
@@ -35,4 +66,16 @@ git push origin main
 pnpm run deploy:production
 ```
 
-O comando usa `DOKPLOY_TOKEN` quando disponível ou a credencial `dokploy.rogpe.tech` do Chaves no macOS. O projeto é estático, com um proxy Nginx específico para a inscrição da newsletter. Nunca inclua uma chave de API no bundle.
+O deploy usa `DOKPLOY_TOKEN` ou a credencial `dokploy.rogpe.tech` do Chaves no macOS. O domínio configurado é `rogplabs.rogpe.tech`.
+
+## CRM e mensuração
+
+`PUBLIC_ORIGIN`, `CRM_BASE_URL`, `CRM_API_KEY`, `EVENT_GATEWAY_URL`, `EVENT_GATEWAY_SOURCE` e `EVENT_GATEWAY_KEY` são configurações exclusivas do servidor. Não entram no build nem no navegador. Em produção, `TRUST_PROXY=true` só é válido atrás do proxy confiável. Use uma única réplica com volume persistente; expansão exige substituir o armazenamento local por uma fila compartilhada.
+
+Tenant `rogpe`, marca `rogpLabs`, sistema `rogplabs.rogpe.tech` e pipeline `sales` são fixados pelo servidor. Contatos usam UUID idempotente no Twenty. Navegação só é coletada após opt-in; valores digitados, consulta da URL, IP e texto dos elementos não entram nos eventos. Contadores de recebimento e entrega ao CRM são operacionais, sem dados pessoais.
+
+[Dashboard privado](https://data.rogpe.tech/dashboard/9-rogplabs-jornada-e-operacao). SQL versionado em `metabase/`. A origem de produção é `urn:rogpe:rogplabs:production`; os testes usam `urn:rogpe:rogplabs:stage`. O mapa de alvos e seções fica em `docs/measurement-map.json` e precisa ser atualizado quando as telas mudarem.
+
+As amostras de performance são observações consentidas, não uma certificação de Core Web Vitals. Saída e abandono são inferidos; inscrição recebida não prova confirmação e lead entregue não prova venda. Consentimento e bloqueadores limitam a cobertura.
+
+A retenção local elimina apenas cópias já entregues: contatos após 30 dias e eventos após 90 dias. Registros ainda na fila permanecem para recuperação. A retenção central do CRM/gateway segue sua própria administração. Consulte `docs/measurement-release.md` para evidências e limites da publicação.

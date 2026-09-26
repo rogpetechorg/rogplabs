@@ -1,0 +1,6 @@
+---
+import { recommendationLabels, type Recommendation } from '../lib/content';
+interface Props { recommendation: Recommendation }
+const { recommendation } = Astro.props;
+---
+<span class={`state-badge state-${recommendation}`}>{recommendationLabels[recommendation]}</span>

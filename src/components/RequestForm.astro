@@ -1,0 +1,43 @@
+<form class="request-form" data-request-form>
+  <label for="request-topic">Sua pergunta</label>
+  <input id="request-topic" name="topic" required minlength="8" maxlength="140" placeholder="Ex.: como avaliar se um agente resolveu bem uma tarefa?" />
+  <fieldset>
+    <legend>Formato que ajudaria mais</legend>
+    <div>
+      <label><input type="radio" name="format" value="Vídeo no YouTube" checked /> Vídeo</label>
+      <label><input type="radio" name="format" value="Experimento de laboratório" /> Experimento</label>
+      <label><input type="radio" name="format" value="Live / conversa" /> Live</label>
+    </div>
+  </fieldset>
+  <button class="button button-primary" type="submit">Revisar pedido no GitHub <span aria-hidden="true">↗</span></button>
+  <p class="form-note">O GitHub abrirá com o pedido preenchido. Nada será publicado sem sua confirmação.</p>
+</form>
+
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-request-form]').forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      document.dispatchEvent(new CustomEvent('rogplabs:form', { detail: { form: 'request', phase: 'submit' } }));
+      const data = new FormData(form);
+      const topic = String(data.get('topic') ?? '').trim();
+      const format = String(data.get('format') ?? 'Vídeo no YouTube');
+      const body = [
+        '## Tema ou pergunta',
+        topic,
+        '',
+        '## Formato preferido',
+        format,
+        '',
+        '## Contexto',
+        'Conte o que motivou o pedido e o que você já tentou.',
+      ].join('\n');
+      const params = new URLSearchParams({
+        title: `[pedido] ${topic}`,
+        body,
+        labels: 'pedido-da-comunidade',
+      });
+      window.open(`https://github.com/rogpetechorg/rogplabs/issues/new?${params.toString()}`, '_blank', 'noopener,noreferrer');
+    });
+  });
+</script>

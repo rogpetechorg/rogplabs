@@ -1,0 +1,39 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import StateBadge from '../../components/StateBadge.astro';
+import { formatDate, recommendationLabels, toIsoDate } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const items = await getCollection('radar');
+  return items.map((item: CollectionEntry<'radar'>) => ({ params: { slug: item.id }, props: { item } }));
+}
+
+interface Props { item: CollectionEntry<'radar'> }
+const { item } = Astro.props;
+const { Content } = await render(item);
+---
+<BaseLayout title={item.data.title} description={item.data.summary} canonicalPath={`/radar/${item.id}/`} type="article" updatedAt={item.data.updatedAt}>
+  <article class="detail-page section-pad">
+    <div class="container detail-layout">
+      <div class="detail-main">
+        <a class="back-link" href="/radar/">← Voltar ao radar</a>
+        <div class="detail-meta"><StateBadge recommendation={item.data.recommendation} /><span>{item.data.area}</span><time datetime={toIsoDate(item.data.updatedAt)}>Revisado em {formatDate(item.data.updatedAt)}</time></div>
+        <h1>{item.data.title}</h1>
+        <p class="detail-lead">{item.data.summary}</p>
+        <div class="prose"><Content /></div>
+        <section class="question-box" aria-labelledby="question-title"><span class="eyebrow">pergunta aberta</span><h2 id="question-title">{item.data.question}</h2><a class="button button-primary" href="https://github.com/rogpetechorg/rogplabs/discussions" target="_blank" rel="noreferrer">Responder nas Discussões <span aria-hidden="true">↗</span></a></section>
+      </div>
+      <aside class="decision-panel" aria-label="Resumo da decisão">
+        <section><span>Recomendação</span><strong>{recommendationLabels[item.data.recommendation]}</strong></section>
+        <section><span>Critério usado</span><p>{item.data.decisionCriteria}</p></section>
+        <section><span>Próximo passo</span><p>{item.data.nextStep}</p></section>
+        <section><span>Evidências e referências</span><ul>{item.data.evidence.map((source: CollectionEntry<'radar'>['data']['evidence'][number]) => <li><a href={source.url} target={source.url.startsWith('http') ? '_blank' : undefined} rel={source.url.startsWith('http') ? 'noreferrer' : undefined}>{source.label} <b aria-hidden="true">↗</b></a></li>)}</ul></section>
+      </aside>
+    </div>
+    <div class="container history-block">
+      <span class="eyebrow">histórico da decisão</span>
+      <ol>{[...item.data.history].reverse().map((entry) => <li><time datetime={toIsoDate(entry.date)}>{formatDate(entry.date, 'short')}</time><strong>{recommendationLabels[entry.state]}</strong><p>{entry.note}</p></li>)}</ol>
+    </div>
+  </article>
+</BaseLayout>

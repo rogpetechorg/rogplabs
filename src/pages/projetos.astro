@@ -1,0 +1,12 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate } from '../lib/content';
+const records: CollectionEntry<'registro'>[] = await getCollection('registro', ({ data }) => !data.draft);
+records.sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+---
+<BaseLayout title="Projetos e evidências" description="Conheça o trabalho público do rogpLabs: decisões técnicas, experimentos e registros datados, com fontes, aprendizados e limites.">
+  <section class="page-hero section-pad"><div class="container narrow"><span class="eyebrow">portfólio público</span><h1>O processo também é parte da entrega.</h1><p>O laboratório publica decisões, fontes e mudanças de direção. Os registros abaixo mostram o trabalho disponível para examinar. Não são cases de clientes nem promessas de resultado.</p></div></section>
+  <section class="record-preview section-pad"><div class="container"><h2>Registros para examinar</h2><ol class="record-list">{records.map(record => <li><time datetime={record.data.publishedAt.toISOString()}>{formatDate(record.data.publishedAt, 'short')}</time><div><h3><a href={`/registro/${record.id}/`}>{record.data.title}</a></h3><p>{record.data.summary}</p></div></li>)}</ol><a class="button button-secondary" href="/radar/">Explorar critérios e evidências no radar</a></div></section>
+  <section class="request-section section-pad"><div class="container narrow"><h2>Quer investigar uma pergunta com o laboratório?</h2><p>Uma parceria começa pela pergunta, pelas fontes disponíveis e pelo que podemos demonstrar. Escopo e condições dependem dessa conversa.</p><a class="button button-primary" href="/contato/">Conversar com o rogpLabs</a></div></section>
+</BaseLayout>

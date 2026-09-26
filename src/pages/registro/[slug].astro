@@ -1,0 +1,26 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate, toIsoDate } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const records = await getCollection('registro', ({ data }) => !data.draft);
+  return records.map((record: CollectionEntry<'registro'>) => ({ params: { slug: record.id }, props: { record } }));
+}
+interface Props { record: CollectionEntry<'registro'> }
+const { record } = Astro.props;
+const { Content } = await render(record);
+---
+<BaseLayout title={record.data.title} description={record.data.summary} canonicalPath={`/registro/${record.id}/`} type="article" publishedAt={record.data.publishedAt}>
+  <article class="article-page section-pad">
+    <div class="container article-container">
+      <a class="back-link" href="/registro/">← Voltar ao registro</a>
+      <div class="detail-meta"><span class="eyebrow">{record.data.kind}</span><time datetime={toIsoDate(record.data.publishedAt)}>{formatDate(record.data.publishedAt)}</time></div>
+      <h1>{record.data.title}</h1>
+      <p class="detail-lead">{record.data.summary}</p>
+      <div class="prose"><Content /></div>
+      <aside class="next-decision"><span class="eyebrow">próxima decisão</span><p>{record.data.nextDecision}</p></aside>
+      {record.data.radarSlugs.length > 0 && <nav class="related-links" aria-label="Itens relacionados no radar"><span>Relacionado no radar</span>{record.data.radarSlugs.map((slug: string) => <a href={`/radar/${slug}/`}>{slug.replaceAll('-', ' ')} <b aria-hidden="true">→</b></a>)}</nav>}
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StateBadge from './StateBadge.astro';
+import { formatDate, toIsoDate } from '../lib/content';
+interface Props { item: CollectionEntry<'radar'>; compact?: boolean }
+const { item, compact = false } = Astro.props;
+---
+<article class:list={['radar-card', { compact }]} data-radar-item data-recommendation={item.data.recommendation}>
+  <div class="card-meta">
+    <StateBadge recommendation={item.data.recommendation} />
+    <span>{item.data.area}</span>
+  </div>
+  <h2><a href={`/radar/${item.id}/`}>{item.data.title}</a></h2>
+  <p>{item.data.summary}</p>
+  <div class="card-footer">
+    <time datetime={toIsoDate(item.data.updatedAt)}>Revisto em {formatDate(item.data.updatedAt, 'short')}</time>
+    <a href={`/radar/${item.id}/`} aria-label={`Ver decisão: ${item.data.title}`}>Ver decisão <span aria-hidden="true">→</span></a>
+  </div>
+</article>

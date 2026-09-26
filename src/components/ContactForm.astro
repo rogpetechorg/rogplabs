@@ -1,0 +1,29 @@
+<form class="request-form contact-form" data-contact-form novalidate>
+  <label for="contact-name">Nome</label><input id="contact-name" name="name" autocomplete="name" required maxlength="120" />
+  <label for="contact-email">E-mail</label><input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="180" />
+  <label for="contact-company">Empresa ou organização (opcional)</label><input id="contact-company" name="company" autocomplete="organization" maxlength="160" />
+  <label for="contact-interest">Sobre o que vamos conversar?</label><select id="contact-interest" name="interest" required><option value="">Selecione</option><option value="partnership">Parceria com o laboratório</option><option value="experiment">Experimento ou projeto</option><option value="training">Interesse em capacitação</option><option value="other">Outro assunto</option></select>
+  <label for="contact-context">Contexto</label><textarea id="contact-context" name="context" rows="5" minlength="20" maxlength="4000" required></textarea>
+  <div class="contact-trap" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off" /></label></div>
+  <label class="contact-consent"><input type="checkbox" name="consent" required /> <span>Aceito o tratamento destes dados para receber retorno. <a href="/privacidade/">Política de privacidade</a>.</span></label>
+  <button class="button button-primary" type="submit">Enviar contexto</button><p class="form-message" data-contact-message role="status" aria-live="polite"></p>
+  <p class="form-note">O envio registra uma solicitação. Escopo, disponibilidade, prazo e condições serão definidos na conversa.</p>
+</form>
+<script>
+  document.querySelectorAll<HTMLFormElement>('[data-contact-form]').forEach(form => {
+    let key = crypto.randomUUID(); let pending = false;
+    const signal = (phase: string, reason?: string) => document.dispatchEvent(new CustomEvent('rogplabs:form', { detail: { form: 'contact', phase, reason } }));
+    form.addEventListener('submit', async event => {
+      event.preventDefault(); if (pending || !form.reportValidity()) return;
+      const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!, message = form.querySelector<HTMLElement>('[data-contact-message]')!;
+      pending = true; button.disabled = true; button.textContent = 'Enviando…'; message.textContent = ''; signal('submit');
+      try {
+        const data = Object.fromEntries(new FormData(form));
+        const response = await fetch('/api/leads', { method: 'POST', headers: { 'content-type': 'application/json', 'x-idempotency-key': key }, body: JSON.stringify({ ...data, consent: form.querySelector<HTMLInputElement>('[name=consent]')!.checked }) });
+        const result = await response.json(); if (!response.ok || !result.reference) throw new Error('server');
+        message.textContent = `Recebemos seu contexto. Protocolo: ${result.reference}.`; form.reset(); key = crypto.randomUUID(); signal('success');
+      } catch { message.textContent = 'Não foi possível confirmar o registro agora. Seus dados foram mantidos; tente novamente.'; signal('error', 'server'); }
+      finally { pending = false; button.disabled = false; button.textContent = 'Enviar contexto'; }
+    });
+  });
+</script>

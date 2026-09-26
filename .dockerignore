@@ -3,3 +3,11 @@ dist
 .git
 .astro
 .env*
+docs
+experiments
+artifacts
+data
+.DS_Store
+
+metabase
+*.env

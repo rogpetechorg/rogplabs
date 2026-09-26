@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props { video: CollectionEntry<'videos'> }
+const { video } = Astro.props;
+const destination = video.data.youtubeUrl ?? 'https://www.youtube.com/@rodolfog.peixoto';
+---
+<div class="episode-flow" data-episode-flow aria-label="O caminho do próximo episódio rogpLabs">
+  <a class="episode-panel episode-featured" href={destination} target="_blank" rel="noreferrer">
+    <span class="episode-index">01 / vídeo</span>
+    <strong>{video.data.title}</strong>
+    <span class="episode-meta">EP. {String(video.data.episode).padStart(3, '0')} <b aria-hidden="true">↗</b></span>
+  </a>
+  <article class="episode-panel episode-references">
+    <span class="episode-index">02 / referências</span>
+    <strong>Roteiro, links e teste aberto.</strong>
+    <p>O registro mostra o que sustenta cada decisão e o que ainda precisa ser testado.</p>
+  </article>
+  <article class="episode-panel episode-debate">
+    <span class="episode-index">03 / debate</span>
+    <strong>Perguntas viram o próximo roteiro.</strong>
+    <a href="#pedidos">Entrar na conversa <span aria-hidden="true">↘</span></a>
+  </article>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-episode-flow]').forEach((flow) => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!('IntersectionObserver' in window)) {
+      flow.classList.add('is-visible');
+      return;
+    }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry?.isIntersecting) return;
+      flow.classList.add('is-visible');
+      observer.unobserve(flow);
+    }, { threshold: 0.2 });
+    observer.observe(flow);
+  });
+</script>

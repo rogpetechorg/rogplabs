@@ -1,0 +1,60 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RadarCard from '../../components/RadarCard.astro';
+import { recommendationLabels, type Recommendation } from '../../lib/content';
+const radar: CollectionEntry<'radar'>[] = await getCollection('radar');
+radar.sort((a: CollectionEntry<'radar'>, b: CollectionEntry<'radar'>) => a.data.order - b.data.order);
+const states = Object.entries(recommendationLabels) as [Recommendation, string][];
+---
+<BaseLayout title="Radar" description="Decisões do rogpLabs sobre tecnologias e práticas: o que adotar, testar, acompanhar ou evitar por enquanto.">
+  <header class="page-hero section-pad">
+    <div class="container narrow"><span class="eyebrow">radar do laboratório</span><h1>Uma posição é uma decisão, não um selo de moda.</h1><p>Leia a lista, filtre pelo estado e abra cada item para ver critério, evidência, histórico e próxima ação.</p></div>
+  </header>
+  <section class="radar-page section-pad" aria-labelledby="radar-list-title">
+    <div class="container">
+      <div class="filter-bar" data-filter-bar aria-label="Filtrar itens do radar">
+        <button type="button" class="is-active" data-filter="todos" aria-pressed="true">Todos <span>{radar.length}</span></button>
+        {states.map(([state, label]) => <button type="button" data-filter={state} aria-pressed="false">{label} <span>{radar.filter((item) => item.data.recommendation === state).length}</span></button>)}
+      </div>
+      <p class="filter-status" data-filter-status aria-live="polite"></p>
+      <h2 id="radar-list-title" class="sr-only">Itens do radar</h2>
+      <div class="radar-list" data-radar-list>{radar.map((item) => <RadarCard item={item} />)}</div>
+      <noscript><p class="notice">Os filtros precisam de JavaScript, mas todos os itens continuam disponíveis nesta página.</p></noscript>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-filter]')];
+  const items = [...document.querySelectorAll<HTMLElement>('[data-radar-item]')];
+  const status = document.querySelector<HTMLElement>('[data-filter-status]');
+  const knownStates = new Set(buttons.map((button) => button.dataset.filter));
+  const params = new URLSearchParams(window.location.search);
+  const initial = params.get('estado');
+
+  function applyFilter(filter: string, updateUrl = true) {
+    const selected = knownStates.has(filter) ? filter : 'todos';
+    let visible = 0;
+    buttons.forEach((button) => {
+      const active = button.dataset.filter === selected;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+    });
+    items.forEach((item) => {
+      const show = selected === 'todos' || item.dataset.recommendation === selected;
+      item.hidden = !show;
+      if (show) visible += 1;
+    });
+    if (status) status.textContent = `${visible} ${visible === 1 ? 'item exibido' : 'itens exibidos'}.`;
+    if (updateUrl) {
+      const url = new URL(window.location.href);
+      if (selected === 'todos') url.searchParams.delete('estado');
+      else url.searchParams.set('estado', selected);
+      window.history.replaceState({}, '', url);
+    }
+  }
+
+  buttons.forEach((button) => button.addEventListener('click', () => applyFilter(button.dataset.filter ?? 'todos')));
+  applyFilter(initial ?? 'todos', false);
+</script>
