@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-26",
+  "artifact": "docs/measurement-release.md",
+  "baseline": "Saídas verificadas de testes, Docker, Twenty, gateway PostgreSQL e dashboard 9 desta execução",
+  "claims": [
+    {"id":"scope","fact":"Exclusivamente rogpLabs","result":"unchanged"},
+    {"id":"tests","fact":"7 contratos; 9 viewports; 16 páginas; 19 arquivos Astro sem diagnósticos","result":"unchanged"},
+    {"id":"crm","fact":"LABS-E917EE0D, rogpLabs, rogplabs.rogpe.tech, sales, HTTP 200","result":"unchanged"},
+    {"id":"delivery","fact":"Snapshot de 1 contato e 25 eventos entregues; dados de validação técnica","result":"unchanged"},
+    {"id":"image","fact":"168371007 bytes; 13,3 MiB em repouso, sem conclusão sobre capacidade sob carga","result":"unchanged"},
+    {"id":"newsletter","fact":"Lista original ausente; HTTP 503; confirmação e envio não validados","result":"unchanged"},
+    {"id":"measurement_limits","fact":"Consentimento limita cobertura; abandono inferido; entrega ao CRM não é venda","result":"unchanged"},
+    {"id":"ai","fact":"Metadados e índice público não garantem ranking ou citação","result":"unchanged"}
+  ],
+  "material_changes": [],
+  "verdict": "pass"
+}
