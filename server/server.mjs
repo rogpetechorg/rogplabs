@@ -22,6 +22,17 @@ export async function createApp({ root = resolve('dist'), dataDir = process.env.
   const paths = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => new URL(m[1]).pathname));
   const limits = new Map(), working = new Set();
   const publicOrigin = config.PUBLIC_ORIGIN || 'https://rogplabs.rogpe.tech';
+  const newsletterList = '00329d73-0df1-435b-ab44-ee105ec9b6a7';
+  let newsletterAvailable = false, newsletterCheckedAt = 0;
+  async function newsletterReady() {
+    if (Date.now() - newsletterCheckedAt < 60000) return newsletterAvailable;
+    try {
+      const response = await request('https://listmonk.rogpe.tech/subscription/form', { signal: AbortSignal.timeout(5000) });
+      newsletterAvailable = response.ok && (await response.text()).includes(`value="${newsletterList}"`);
+    } catch { newsletterAvailable = false; }
+    newsletterCheckedAt = Date.now();
+    return newsletterAvailable;
+  }
   async function operational(record, name) {
     const bytes = createHash('sha256').update(`${record.id}:${name}`).digest().subarray(0, 16); bytes[6] = (bytes[6] & 15) | 64; bytes[8] = (bytes[8] & 63) | 128;
     const h = bytes.toString('hex'), id = `${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20)}`;
@@ -57,6 +68,7 @@ export async function createApp({ root = resolve('dist'), dataDir = process.env.
         const input = await body(req);
         if (url.pathname === '/api/newsletter/subscribe') {
           if (!input || typeof input.email !== 'string' || input.email.length > 180 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email)) return json(res, 422, { error: 'invalid_email' });
+          if (!await newsletterReady()) return json(res, 503, { error: 'newsletter_unavailable' });
           const response = await request('https://listmonk.rogpe.tech/api/public/subscription', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: input.email.trim(), list_uuids: ['00329d73-0df1-435b-ab44-ee105ec9b6a7'] }), signal: AbortSignal.timeout(15000) });
           return json(res, response.ok ? 202 : 502, response.ok ? { status: 'confirmation_required' } : { error: 'newsletter_unavailable' });
         }

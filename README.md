@@ -54,6 +54,8 @@ Discussões abertas ficam no [GitHub Discussions](https://github.com/rogpetechor
 
 O formulário envia inscrições para a lista pública de opt-in do Listmonk por `/api/newsletter/subscribe`. O servidor Node encaminha apenas essa rota para `listmonk.rogpe.tech`, sem credencial no navegador. O assinante recebe um e-mail de confirmação antes de entrar na lista.
 
+Antes de aceitar a inscrição, o backend verifica se o UUID aparece no formulário público do Listmonk (cache de 60 segundos). Sem essa lista, responde indisponibilidade e não encaminha o e-mail.
+
 Não troque o UUID da lista pública por uma lista privada e não use a API administrativa no bundle.
 
 ## Deploy no Dokploy

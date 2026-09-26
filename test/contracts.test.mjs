@@ -42,7 +42,7 @@ test('HTTP intake, duplicate, consent, newsletter isolation, routing and static 
   const dir = await mkdtemp(join(tmpdir(), 'labs-http-')); let server;
   try {
     await writeFile(join(dir, 'sitemap.xml'), '<urlset><url><loc>https://rogplabs.rogpe.tech/</loc></url></urlset>'); await writeFile(join(dir, 'index.html'), '<h1>Labs</h1>'); await writeFile(join(dir, '404.html'), '<h1>404</h1>');
-    const app = await createApp({ root: dir, dataDir: join(dir, 'data'), config: {}, request: async (url, init) => { assert.deepEqual(JSON.parse(init.body).list_uuids, ['00329d73-0df1-435b-ab44-ee105ec9b6a7']); return Response.json({}); } });
+    const app = await createApp({ root: dir, dataDir: join(dir, 'data'), config: {}, request: async (url, init) => { if (url.endsWith('/subscription/form')) return new Response('<input value="00329d73-0df1-435b-ab44-ee105ec9b6a7">'); assert.deepEqual(JSON.parse(init.body).list_uuids, ['00329d73-0df1-435b-ab44-ee105ec9b6a7']); return Response.json({}); } });
     server = app.server; await new Promise(resolve => server.listen(0, '127.0.0.1', resolve)); const base = `http://127.0.0.1:${server.address().port}`;
     const id = randomUUID(), init = { method: 'POST', headers: { 'content-type': 'application/json', 'x-idempotency-key': id }, body: JSON.stringify(valid) };
     const first = await fetch(base + '/api/leads', init); assert.equal(first.status, 201); const result = await first.json(); assert.match(result.reference, /^LABS-/); assert.equal(JSON.stringify(result).includes(valid.email), false);
@@ -53,4 +53,15 @@ test('HTTP intake, duplicate, consent, newsletter isolation, routing and static 
     assert.equal((await fetch(base + '/api/newsletter/subscribe', { ...init, body: JSON.stringify({ email: valid.email, list_uuids: ['other'] }) })).status, 202);
     assert.equal((await fetch(base + '/missing')).status, 404); assert.equal((await fetch(base + '/', { method: 'HEAD' })).status, 200);
   } finally { if (server) await new Promise(resolve => server.close(resolve)); await rm(dir, { recursive: true, force: true }); }
+});
+
+test('newsletter fails closed if its own public list is missing', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'labs-newsletter-')); let server; let posts = 0;
+  try {
+    await writeFile(join(dir, 'sitemap.xml'), '<urlset/>');
+    const app = await createApp({root:dir, dataDir:join(dir,'data'), config:{}, request:async (_url, init) => { if(init.method === 'POST') posts++; return new Response('<input value="another-brand">'); }});
+    server=app.server; await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+    const r=await fetch(`http://127.0.0.1:${server.address().port}/api/newsletter/subscribe`,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:valid.email})});
+    assert.equal(r.status,503); assert.equal(posts,0);
+  } finally { if(server) await new Promise(resolve=>server.close(resolve)); await rm(dir,{recursive:true,force:true}); }
 });
